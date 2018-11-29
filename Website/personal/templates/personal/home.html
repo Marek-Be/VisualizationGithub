@@ -1,0 +1,20 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+<p>This is a simple website that compares a variety of github user data. It takes your github username and from that
+gets your followers. It then takes the data of your followers and gets the number of repositories they have.
+The website displays this data compared to yours, listing the username of the person with how many repos they have.
+</p>
+<p>At the moment this will often be broken because of the github limit on requests from the api.  </p>
+<p>There is a lot more that can still be added such as increasing the max number of users (20), letting you compare other
+things such as followers, following or total commits. A better request system that hides its requests as something from
+chrome and not python-requests so the github api could be tricked into accepting many more requests than it does currently.
+</p>
+
+{% include "personal/name.html" %}
+<p> 
+{{ Error }}
+</p>
+
+{% include "personal/graph.html" %}
+{% endblock %}
